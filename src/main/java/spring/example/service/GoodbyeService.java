@@ -7,11 +7,15 @@ import spring.example.repository.GoodByeRepository;
 @Service
 public class GoodbyeService {
 
+    private GoodByeRepository goodByeRepository;
+
     /**
      * DI by setter
      */
     @Autowired
-    private GoodByeRepository goodByeRepository;
+    public void setGoodByeRepository(GoodByeRepository goodByeRepository) {
+        this.goodByeRepository = goodByeRepository;
+    }
 
     public String goodbye() {
 
