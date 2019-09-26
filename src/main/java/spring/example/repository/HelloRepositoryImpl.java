@@ -9,4 +9,9 @@ public class HelloRepositoryImpl implements HelloRepository {
 
         return "HELLO !!!";
     }
+
+    public void printHello() {
+
+        System.out.println("HELLO !!!");
+    }
 }
