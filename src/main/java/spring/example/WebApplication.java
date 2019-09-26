@@ -6,6 +6,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import spring.example.configuration.ApplicationConfig;
 import spring.example.repository.HelloRepository;
 import spring.example.repository.HelloRepositoryImpl;
+import spring.example.service.BeanLifecycleService1;
+import spring.example.service.BeanLifecycleService2;
+import spring.example.service.BeanLifecycleService3;
 import spring.example.service.FooService;
 
 @SpringBootApplication
@@ -22,14 +25,24 @@ public class WebApplication {
         fooServiceByClass.doBeanByClass();
 
         // get bean by name
-        FooService fooServiceByName = (FooService)context.getBean("fooService");
+        FooService fooServiceByName =
+                (FooService)context.getBean("fooService");
         fooServiceByName.doBeanByName();
 
-        // get bean by interface (1 interface has 1 implement)
-        HelloRepository helloRepository = context.getBean(HelloRepository.class);
-        helloRepository.printHello();
+        // Bean Lifecycle by initMethod & destroyMethod
+        BeanLifecycleService1 beanLifecycleService1 =
+                context.getBean(BeanLifecycleService1.class);
+        beanLifecycleService1.doStuff();
 
-        // get bean by interface (1 interface has many implements)
+        // Bean Lifecycle by @PostConstruct & @PreDestroy
+        BeanLifecycleService2 beanLifecycleService2 =
+                context.getBean(BeanLifecycleService2.class);
+        beanLifecycleService2.doStuff();
+
+        // Bean Lifecycle by implement InitializingBean & DisposableBean
+        BeanLifecycleService3 beanLifecycleService3 =
+                context.getBean(BeanLifecycleService3.class);
+        beanLifecycleService3.doStuff();
 
         context.close();
     }
