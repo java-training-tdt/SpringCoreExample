@@ -11,6 +11,9 @@ import spring.example.service.BeanLifecycleService2;
 import spring.example.service.BeanLifecycleService3;
 import spring.example.service.FooService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @SpringBootApplication
 public class WebApplication {
 
@@ -45,5 +48,6 @@ public class WebApplication {
         beanLifecycleService3.doStuff();
 
         context.close();
+
     }
 }

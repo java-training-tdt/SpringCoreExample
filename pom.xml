@@ -20,6 +20,8 @@
   </parent>
 
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
   </properties>
 
@@ -42,6 +44,18 @@
       <artifactId>spring-boot-starter-tomcat</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>6.0.6</version>
+      <scope>runtime</scope>
+    </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.core/jersey-common -->
     <dependency>
       <groupId>org.glassfish.jersey.core</groupId>
@@ -55,7 +69,6 @@
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
     </dependency>
-
 
   </dependencies>
 
