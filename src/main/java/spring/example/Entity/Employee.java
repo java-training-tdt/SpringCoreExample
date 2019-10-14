@@ -33,6 +33,17 @@ public class Employee {
     @Column(name = "job_title", length = 50, nullable = false)
     private String jobTitle;
 
+    public Employee(int employeeNumber, String lastName, String firstName, String extension, String email, String officeCode, int reportsTo, String jobTitle) {
+        this.employeeNumber = employeeNumber;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.extension = extension;
+        this.email = email;
+        this.officeCode = officeCode;
+        this.reportsTo = reportsTo;
+        this.jobTitle = jobTitle;
+    }
+
     public int getEmployeeNumber() {
         return employeeNumber;
     }
