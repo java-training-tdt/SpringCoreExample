@@ -33,6 +33,9 @@ public class Employee {
     @Column(name = "job_title", length = 50, nullable = false)
     private String jobTitle;
 
+    public Employee() {
+    }
+
     public Employee(int employeeNumber, String lastName, String firstName, String extension, String email, String officeCode, int reportsTo, String jobTitle) {
         this.employeeNumber = employeeNumber;
         this.lastName = lastName;
